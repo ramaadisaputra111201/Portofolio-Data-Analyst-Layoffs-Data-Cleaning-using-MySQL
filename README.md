@@ -1,4 +1,4 @@
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/0a0ae6b8-e1b5-4293-8397-c09b1bf24bd1" /># Portofolio-Data-Analyst-Layoffs-Data-Cleaning-using-MySQL
+**Portofolio Data Analyst Layoffs-Data cleaning using MySQL**
 
 **Project Overview**
 
@@ -17,7 +17,6 @@ As a data analyst, the primary challenge is ensuring that the analyzed data is a
 
 
 **Dataset Information**
-
 Source : Global layoffs dataset
 Records : Company-level layoff events
 Key Columns :
@@ -33,7 +32,6 @@ Key Columns :
 
 
 **Tools & Skills Used**
-
 * SQL (MySQL)
 * Window Functions (ROW_NUMBER)
 * Data Standardization
@@ -69,4 +67,36 @@ The raw data also shows a variety of industry names that substantively refer to 
 
 <img width="406" height="180" alt="image" src="https://github.com/user-attachments/assets/f1dc6cc6-4cf1-4af4-9973-57a60823aa1d" />
 
-Additionally, some industries lack a name (null or ' ') but have their industry identity already filled in within the same company. Therefore, it's necessary to match the industry name to the company's non-empty or null industry.
+In some data rows, industry values ​​are missing or written as empty strings (null or ' '). The primary goal of this step is to minimize the loss of analytical information without introducing unverified external assumptions.
+
+The approach used is self-join-based data enrichment, which fills in missing industry values ​​with values ​​from other industries within the same company. This approach is based on the logical assumption that a company generally operates within a single primary industrial sector. Thus, filling in missing values ​​is consistent, valid, and based on internal data.
+
+4. Handling Missing Values ​​in Total Laid Off Value and Percentage Laid Off
+
+<img width="790" height="368" alt="image" src="https://github.com/user-attachments/assets/a84131d1-cc2d-46eb-b5a3-eae99145ce31" />
+
+Several data rows have null values ​​in both the total_laid_off and percentage_laid_off columns. The goal of this step is to remove data that provides no analytical value (both null) because these rows cannot be used to measure the scale or proportion of layoffs.
+
+By removing this uninformative data, the dataset becomes more focused, efficient, and free from noise that could interfere with the interpretation of the analysis results.
+
+5. Date Standardization and Conversion
+
+<img width="198" height="171" alt="image" src="https://github.com/user-attachments/assets/83add3ce-bda1-4331-ae7d-1da98534c3cb" />
+
+The date columns in the initial dataset were still in text format, making them unsuitable for time-based analysis. The goal of this stage is to convert the date representation into a standard database system-compliant DATE format, enabling analysis of layoff trends based on time.
+
+This process includes parsing the date format and converting the data type, which directly improves the dataset's usability for time-series analysis, such as monthly, annual, and seasonal trends.
+
+6. Standardization of Country Spelling
+
+There are differences in the spelling of country names, such as in the case of 'United States' and 'United States.' In the data, there is a difference in the spelling of the country name with a '.' (dot), which can be an error. Therefore, it is necessary to standardize the country names.
+
+<img width="323" height="177" alt="image" src="https://github.com/user-attachments/assets/5c841296-276c-48bc-bc0d-bc6d9553039d" />
+
+The next stage aims to standardize the spelling of country names. Small differences, such as the use of a period at the end of a text, can cause a single country to be read as two separate entities during analysis. The goal of this standardization is to ensure the accuracy of geographic analysis, particularly in calculating the number of layoffs per country and visualizing global distribution.
+
+
+
+**Conclusion**
+
+Overall, this data cleaning process is designed to ensure that the Global Layoffs dataset has high data integrity, a consistent structure, and analytical soundness. Each step is carried out with a clear objective and is oriented towards the quality of the analysis results, ensuring that the resulting insights are reliable and can be used as a basis for decision-making.
