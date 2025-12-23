@@ -1,4 +1,4 @@
-**Portofolio Data Analyst Layoffs-Data cleaning using MySQL**
+**Portofolio Data Analyst: Layoffs Data cleaning using MySQL**
 
 **Project Overview**
 
