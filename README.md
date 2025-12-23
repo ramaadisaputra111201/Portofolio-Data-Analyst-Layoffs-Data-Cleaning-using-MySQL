@@ -15,12 +15,16 @@ As a data analyst, the primary challenge is ensuring that the analyzed data is a
 3. Improve data quality and reliability so that the resulting insights are not biased or misleading.
 4. Prepare a final dataset that is consistent, clean, and ready for analysis using SQL or BI tools.
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **Dataset Information**
 
 Source : Global layoffs dataset
+
 Records : Company-level layoff events
+
 Key Columns :
+
 * company
 * location
 * industry
@@ -40,10 +44,12 @@ Key Columns :
 * Data Validation & Cleaning
 * Analytical Thinking
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **Data Cleaning**
 
 1. Delete Duplicates
+   
 The data containing duplicates includes the company names Casper, Cazoo, Hibob, Wildlife Studios, and Yahoo. These data contain two duplicates.
 
 <img width="925" height="235" alt="image" src="https://github.com/user-attachments/assets/abff55ff-4f4a-4f3d-a2ee-1fb2af0edfdd" />
@@ -96,7 +102,7 @@ There are differences in the spelling of country names, such as in the case of '
 
 The next stage aims to standardize the spelling of country names. Small differences, such as the use of a period at the end of a text, can cause a single country to be read as two separate entities during analysis. The goal of this standardization is to ensure the accuracy of geographic analysis, particularly in calculating the number of layoffs per country and visualizing global distribution.
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 **Conclusion**
 
