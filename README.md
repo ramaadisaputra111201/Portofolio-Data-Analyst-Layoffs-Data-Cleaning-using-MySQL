@@ -1,13 +1,12 @@
-# Portofolio-Data-Analyst-Layoffs-Data-Cleaning-using-MySQL
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/0a0ae6b8-e1b5-4293-8397-c09b1bf24bd1" /># Portofolio-Data-Analyst-Layoffs-Data-Cleaning-using-MySQL
 
 **Project Overview**
+
 The “**Layoffs**” dataset contains information about employee layoffs that occurred across various global companies.The dataset used contains 2361 records, where each row represents a single layoff event and includes details such as company, location, industry, total laid off, percentage laid off, date, stage, and funds raised (in millions).
 
 The Global Layoffs dataset contains information on company layoffs across various countries, industries, and time periods. However, the raw dataset has several major issues, such as data duplication, category inconsistencies, inconsistent date formats, and missing values.
 
 As a data analyst, the primary challenge is ensuring that the analyzed data is accurate, consistent, and reliable before using it for exploratory data analysis (EDA) and business decision-making.
-
-The purpose of data cleaning in this project is to improve the quality of the layoffs dataset so that the analysis results can serve as a valid and informative basis for decision-making in understanding global layoff trends by time, industry, and region.
 
 
 **The main objectives of this data cleaning project are:**
@@ -18,6 +17,7 @@ The purpose of data cleaning in this project is to improve the quality of the la
 
 
 **Dataset Information**
+
 Source : Global layoffs dataset
 Records : Company-level layoff events
 Key Columns :
@@ -33,6 +33,7 @@ Key Columns :
 
 
 **Tools & Skills Used**
+
 * SQL (MySQL)
 * Window Functions (ROW_NUMBER)
 * Data Standardization
@@ -42,6 +43,7 @@ Key Columns :
 
 
 **Data Cleaning**
+
 1. Delete Duplicates
 The data containing duplicates includes the company names Casper, Cazoo, Hibob, Wildlife Studios, and Yahoo. These data contain two duplicates.
 
@@ -53,9 +55,9 @@ To achieve this goal, the window function ROW_NUMBER() is used with partitioning
 
 2. Company Name Standardization
 
-<img width="204" height="276" alt="image" src="https://github.com/user-attachments/assets/8b73415c-79f3-4be2-a774-71423b9c2574" />
+<img width="250" height="202" alt="image" src="https://github.com/user-attachments/assets/83ddb5a9-4ea4-4239-bedc-d18052bd60dd" />
 
-The next step aims to standardize the spelling of company names. The raw data revealed spelling differences caused by spaces at the beginning or end of text, which are technically considered different by the database system. The goal of this process is to ensure consistency in company identity, so that each company is represented as a single entity.
+The next step aims to standardize the spelling of company names (trim). The raw data revealed spelling differences caused by spaces at the beginning or end of text, which are technically considered different by the database system. The goal of this process is to ensure consistency in company identity, so that each company is represented as a single entity.
 
 This standardization is crucial to ensure that the aggregation, grouping, and ranking of companies based on the number of layoffs can be carried out accurately without data fragmentation.
 
