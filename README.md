@@ -17,6 +17,7 @@ As a data analyst, the primary challenge is ensuring that the analyzed data is a
 
 
 **Dataset Information**
+
 Source : Global layoffs dataset
 Records : Company-level layoff events
 Key Columns :
